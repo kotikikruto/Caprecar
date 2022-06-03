@@ -26,49 +26,38 @@ Caprecar(241, 3, 10) = 421 - 124 = 297
 Основная программа (main.py) решает данную задачу. Пока что она несовершенна, но с задачей тем не менее справляется.
 
 ``` python
-from perevod import in_10, in_N  # Функции, переводящие число из n системы в 10ю и наоборот соответственно
+# Соединяем отдельные функции капрекара в одну
+from caprecar_10 import Caprecar_10
+from caprecar_9 import Caprecar_9
+from caprecar_8 import Caprecar_8
+from caprecar_7 import Caprecar_7
+from caprecar_6 import Caprecar_6
+from caprecar_5 import Caprecar_5
+from caprecar_4 import Caprecar_4
+from caprecar_3 import Caprecar_3
+from caprecar_2 import Caprecar_2
 
 
-def Make_values(l, s):
-    list = []
-    for j in range(s ** l // 2):
-        n = in_N(j, s)
-        c_1 = 0
-        c_2 = 0
-        c_3 = 0
-        c_4 = 0
-        c_5 = 0
-        c_6 = 0
-        c_7 = 0
-        c_8 = 0
-        c_9 = 0
-        for i in range(len(n)):
-            if n[i] == '1':
-                c_1 += 1
-            elif n[i] == '2':
-                c_2 += 1
-            elif n[i] == '3':
-                c_3 += 1
-            elif n[i] == '4':
-                c_4 += 1
-            elif n[i] == '5':
-                c_5 += 1
-            elif n[i] == '6':
-                c_6 += 1
-            elif n[i] == '7':
-                c_7 += 1
-            elif n[i] == '8':
-                c_8 += 1
-            elif n[i] == '9':
-                c_9 += 1
-        value = (
-                        l - c_1 - c_2 - c_3 - c_4 - c_5 - c_6 - c_7 - c_8 - c_9) * '0' + c_1 * '1' + c_2 * '2' + c_3 * '3' + 
-                        c_4 * '4' + c_5 * '5' + c_6 * '6' + c_7 * '7' + c_8 * '8' + c_9 * '9 '
-        if value not in list:
-            list.append(value)
-    list_1 = []
-    for i in range(len(list)):
-        list_1.append(in_10(list[i], s))
-    return list_1
+def Caprecar(n, l, s):
+    if s == 10:
+        return Caprecar_10(n, l)
+    elif s == 9:
+        return Caprecar_9(n, l)
+    elif s == 8:
+        return Caprecar_8(n, l)
+    elif s == 7:
+        return Caprecar_7(n, l)
+    elif s == 6:
+        return Caprecar_6(n, l)
+    elif s == 5:
+        return Caprecar_5(n, l)
+    elif s == 4:
+        return Caprecar_4(n, l)
+    elif s == 3:
+        return Caprecar_3(n, l)
+    elif s == 2:
+        return Caprecar_2(n, l)
+    else:
+        return "Error"
     
 ```
