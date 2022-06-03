@@ -26,38 +26,29 @@ Caprecar(241, 3, 10) = 421 - 124 = 297
 Основная программа (main.py) решает данную задачу. Пока что она несовершенна, но с задачей тем не менее справляется.
 
 ``` python
-# Соединяем отдельные функции капрекара в одну
-from caprecar_10 import Caprecar_10
-from caprecar_9 import Caprecar_9
-from caprecar_8 import Caprecar_8
-from caprecar_7 import Caprecar_7
-from caprecar_6 import Caprecar_6
-from caprecar_5 import Caprecar_5
-from caprecar_4 import Caprecar_4
-from caprecar_3 import Caprecar_3
-from caprecar_2 import Caprecar_2
+# Капрекар для 5ной сс (вход и выход - в десятичной!)
+from perevod import in_10, in_N
 
 
-def Caprecar(n, l, s):
-    if s == 10:
-        return Caprecar_10(n, l)
-    elif s == 9:
-        return Caprecar_9(n, l)
-    elif s == 8:
-        return Caprecar_8(n, l)
-    elif s == 7:
-        return Caprecar_7(n, l)
-    elif s == 6:
-        return Caprecar_6(n, l)
-    elif s == 5:
-        return Caprecar_5(n, l)
-    elif s == 4:
-        return Caprecar_4(n, l)
-    elif s == 3:
-        return Caprecar_3(n, l)
-    elif s == 2:
-        return Caprecar_2(n, l)
-    else:
-        return "Error"
+def Caprecar_5(n, l):
+    n = in_N(n, 5)
+    c_1 = 0
+    c_2 = 0
+    c_3 = 0
+    c_4 = 0
+    for i in range(len(n)):
+        if n[i] == '1':
+            c_1 += 1
+        elif n[i] == '2':
+            c_2 += 1
+        elif n[i] == '3':
+            c_3 += 1
+        elif n[i] == '4':
+            c_4 += 1
+
+    capmax = c_4 * '4' + c_3 * '3' + c_2 * '2' + c_1 * '1' + (l - c_1 - c_2 - c_3 - c_4) * '0'
+    capmin = (l - c_1 - c_2 - c_3 - c_4) * '0' + c_1 * '1' + c_2 * '2' + c_3 * '3' + c_4 * '4'
+
+    return in_10(capmax, 5) - in_10(capmin, 5)
     
 ```
