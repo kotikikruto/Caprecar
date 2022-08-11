@@ -31,3 +31,32 @@ def Caprecar(n, l, s):
         return Caprecar_2(n, l)
     else:
         return "Error"
+
+
+def Kaprekar(n, k, b):  # Задано число (последовательность цифр) длины k в системе счисления b
+    if (type(n) is int) & (n in range(b ** k)) & \
+            (type(k) is int) & (k >= 2) & \
+            (type(b) is int) & (b >= 2):
+        d = []
+        for m in range(k):
+            n, q = divmod(n, b)
+            d.append(q)
+
+        l_alpha = sorted(d, reverse=True)
+        l_omega = sorted(d)
+
+        def N(l):
+            c = 0
+            for m in range(k):
+                c = c * b + l[m]
+            return c
+
+        i_alpha = N(l_alpha)
+        i_omega = N(l_omega)
+        return i_alpha - i_omega
+    else:
+        return None
+
+
+print(Kaprekar(2, 3, 7))
+print(Caprecar(2, 3, 7))

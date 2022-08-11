@@ -1,18 +1,20 @@
 # Основной файл
 from caprecar import Caprecar
+from caprecar import Kaprekar
 from search import Search_1, Search_2
 from make_values import Make_values
 
 lenght = int(input("Введите длину (от 2 до 10): "))  # Ввод длины числа
 system = int(input("Введите систему счисления (от 2 до 10): "))  # Ввод системы счисления
 
-#range_of_values = list(range(system ** lenght // 2))  # Составляем область определения (Можно постараться уменьшить)
-range_of_values = Make_values(lenght, system)
+range_of_values = list(range(system ** lenght // 2))  # Составляем область определения (Можно постараться уменьшить)
+#range_of_values = Make_values(lenght, system)
 range_of_values_new = []  # Область значений функции капрекара, пока не заполнено
 
 while True:
     for i in range(len(range_of_values)):
         c = Caprecar(range_of_values[i], lenght, system)
+        #c = Kaprekar(range_of_values[i], lenght, system)
         if c not in range_of_values_new:
             range_of_values_new.append(c)  # Заполняем область значений
     if len(range_of_values) == len(range_of_values_new):
