@@ -7,7 +7,6 @@ lenght = int(input("Введите длину (от 2 до 10): "))  # Ввод 
 system = int(input("Введите систему счисления (от 2 до 10): "))  # Ввод системы счисления
 
 range_of_values = list(range(system ** lenght // 2))  # Составляем область определения (Можно постараться уменьшить)
-#range_of_values = Make_values(lenght, system)
 range_of_values_new = []  # Область значений функции капрекара, пока не заполнено
 
 while True:

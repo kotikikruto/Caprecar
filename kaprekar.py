@@ -56,7 +56,3 @@ def Kaprekar(n, k, b):  # Задано число (последовательн�
         return i_alpha - i_omega
     else:
         return None
-
-
-print(Kaprekar(2, 3, 7))
-print(Caprecar(2, 3, 7))
