@@ -33,7 +33,7 @@ def Caprecar(n, l, s):
         return "Error"
 
 
-def Kaprekar(n, k, b):  # Задано число (последовательность цифр) длины k в системе счисления b
+def Kaprekar(n, k, b):  # Задано число (последовательность цифр) n длины k в системе счисления b
     if (type(n) is int) & (n in range(b ** k)) & \
             (type(k) is int) & (k >= 2) & \
             (type(b) is int) & (b >= 2):
