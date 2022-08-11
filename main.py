@@ -1,6 +1,5 @@
 # Основной файл
-from caprecar import Caprecar
-from caprecar import Kaprekar
+from kaprekar import Kaprekar
 from search import Search_1, Search_2
 from make_values import Make_values
 
@@ -13,8 +12,7 @@ range_of_values_new = []  # Область значений функции ка�
 
 while True:
     for i in range(len(range_of_values)):
-        c = Caprecar(range_of_values[i], lenght, system)
-        #c = Kaprekar(range_of_values[i], lenght, system)
+        c = Kaprekar(range_of_values[i], lenght, system)
         if c not in range_of_values_new:
             range_of_values_new.append(c)  # Заполняем область значений
     if len(range_of_values) == len(range_of_values_new):

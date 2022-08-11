@@ -1,6 +1,6 @@
 # Просто нечто бессмысленное (Выход - какие числа куда переходят)
 
-from caprecar import Caprecar
+from kaprekar import Caprecar
 from perevod import in_N
 
 
