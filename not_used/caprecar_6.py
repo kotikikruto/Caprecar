@@ -1,5 +1,5 @@
 # Капрекар для 6ной сс (вход и выход - в десятичной!)
-from perevod import in_10, in_N
+from conversion import in_10, in_N
 
 
 def Caprecar_6(n, l):
